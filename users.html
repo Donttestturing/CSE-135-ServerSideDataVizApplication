@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>UCSociallyDead Database</title>
+    <link rel="stylesheet" href="./styles/style.css">
+	<script src="https://cdn.zinggrid.com/zinggrid.min.js"></script>
+    <link rel="icon" href="./content/serverIcon.png">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <zing-grid id="usersGrid" theme="dark" editor-controls >
+            <zg-caption> User Data </zg-caption>
+            <zg-data id="zgData" >
+            <!-- <zg-param id="headParam" name="headers" value='{"auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiIzIiwiZW1haWwiOiIzQDEyMyIsInBhc3N3b3JkIjoiJDJhJDEwJEV1TTloR2ZIMFVGN0lFTmNoSDVqVXVXVHg1UDJXa1M5ak5leHN0Nzd2U2tURE8xZGFmNnNDIiwiYWRtaW4iOjEsImlhdCI6MTY4NTczMjM5MiwiZXhwIjoxNjg1NzQyMzkyfQ.qvVNP4a9QCM3AMItLR0nV9PcThQRecvmUg_HISOpA74"}'></zg-param> 
+                -->
+                <zg-param id="headParam" name="headers"> </zg-param> <!-- -->
+                
+            </zg-data>
+            
+        </zing-grid> 
+    </main>
+    <footer> <br> <button type="submit" id="logoutBtn"> Logout </button> <br> <br>
+        <li> <a href="./index.html"> Reporting Dashboard </a> </li>
+        <script src="./code/users.js"></script>
+    </footer>
+</body>
+
+</html>

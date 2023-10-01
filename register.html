@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./content/serverIcon.png">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>Registration Form</header>
+
+        <!-- User already exists -->
+        <div id="modal" class="alert alert-danger" role="alert" style="display:none">
+            User already exists! Please login <a href="./login.html" class="alert-link">here</a>.
+        </div>
+
+
+        <hr class="login-bar">
+
+        <form class="login-form" id="register-form" action="#">
+            <div class="login-form">
+                <label for="name">User Name: </label>
+                <input name="username" id="username" required>
+            </div>
+            <div class="login-form">
+                <label for="name">Email: </label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="login-form">
+                <label for="email">Password: </label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="login-form">
+                <input type="submit" value="Register!">
+            </div>
+        </form>
+
+        <div class="error" id="error-text"></div>
+        <hr class="login-bar">
+        <div class="sign-txt">Already a Member? <a href="./login.html">Login</a></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+    <script type="module" src="./code/register.js"></script>
+
+</body>
+<footer> Thank you! </footer>
+
+</html>

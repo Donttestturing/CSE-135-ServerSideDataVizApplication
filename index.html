@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLGWHQE1D7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZLGWHQE1D7');
+    </script>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporting Dashboard</title>
+    <link rel="icon" href="content/serverIcon.png">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="./code/dataviz.js" type="module"></script>
+    <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://cdn.zinggrid.com/zinggrid.min.js"></script>
+    <script src="./reporting.js"> </script>
+    <style>
+        html, body{
+            background-color: var(--color-primary);
+        }
+        iframe{
+          background-color: white;
+          min-width: 50vw;
+          padding-left: 8px;
+          
+        }
+        h1{
+            text-shadow: #E9EAEC;
+            color: var(--color-trim);
+        }
+        h5 {
+          color: var(--color-secondary);
+        }
+    
+        #pieChart{
+          background-color: var(--color-secondary);
+        }
+        .chart-parent--container {
+          display: flex;
+        }
+    
+        .chart--container {
+          height: 100%;
+          width: 100%;
+          min-height: 568px;
+          margin-right: 10px;
+        }
+        #viewGridsChecker{
+          display: flex;
+          justify-content: center;
+        }
+        #scatterChart, #acceptanceGrid {
+          height: 600px;
+          width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header> <li> <a href="./userRegionMetric.html"> Generate Report for Analysis of Region/Language </a> </li> </header>
+    <h1>Reporting Dashboard</h1>
+    <h5>reporting.ucsociallydead.com</h5> <hr>
+    <br>
+    
+    <main>
+      <div class="chart-parent--container">
+        <div id="pieChart" class="chart--container"> </div>
+        <iframe title="Map of Users on our site, by Country Concentration" aria-label="Map" id="datawrapper-chart-SaP5A" src="https://datawrapper.dwcdn.net/SaP5A/1/" scrolling="no" frameborder="0" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}(); </script> 
+      </div>
+
+      <div class="container-fluid">
+        <div class="row"> 
+          <div class="col-md-6"> 
+              <zing-grid theme="ios" search pager id="acceptanceGrid" page-size="4">
+                <zg-caption>Content Acceptance Data</zg-caption>
+                <zg-colgroup>
+                  <zg-column index="id"></zg-column>
+                  <zg-column index="User accepts Cookies" ></zg-column>
+                  <zg-column index="User allows Javascript" ></zg-column>
+                  <zg-column index="User allows Css" ></zg-column>
+                  <zg-column index="User allows Images" ></zg-column>
+                  <zg-column index="Percent Acceptance" head-cell="avg"></zg-column>
+                </zg-colgroup>
+              </zing-grid>
+          </div>
+          <div class="col-md-6"> <div id="scatterChart"> </div> </div>
+        </div>
+        
+      </div>
+
+      <div id="viewGridsChecker">
+        <div class="form-check form-switch" >
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+          <label class="form-check-label" for="flexSwitchCheckChecked"> View Database Grids </label>
+        </div>
+      </div>
+      <div class="container-fluid" id="databaseGrids" hidden>
+        <div class="row"> 
+          <div class="col-md-4">     <zing-grid theme="dark" search pager>
+            <zg-caption>Static Data</zg-caption>
+            <zg-data 
+              src="https://ucsociallydead.com/api/static/"
+              options='{
+                "sortByKey": "_sort",
+                "sortBy": "Id",
+                "sortDirKey": "_order",
+                "sortDir": "desc"
+              }'
+            >
+            </zg-data>
+          </zing-grid> </div>
+
+          <div class="col-md-4"> <zing-grid theme="dark" search pager>
+            <zg-caption>Performance Data</zg-caption>
+            <zg-data 
+              src="https://ucsociallydead.com/api/performance/"
+              options='{
+                "sortByKey": "_sort",
+                "sortBy": "Id",
+                "sortDirKey": "_order",
+                "sortDir": "desc"
+              }'
+            >
+            </zg-data>
+          </zing-grid> </div>
+
+          <div class="col-md-4"> <zing-grid theme="dark" search pager> 
+            <zg-caption>Activity Data</zg-caption>
+            <zg-data 
+              src="https://ucsociallydead.com/api/activity/"
+              options='{
+                "sortByKey": "_sort",
+                "sortBy": "Id",
+                "sortDirKey": "_order",
+                "sortDir": "desc"
+              }'
+            >
+            </zg-data>
+          </zing-grid> </div>
+        </div>
+      </div>
+
+
+    </main>
+    <footer>
+      <button type="submit" id="logoutBtn"> Logout </button> <br> <br>
+      <a href="https://www.ucsociallydead.com/"> Back to Homepage </a> <br>
+      <script>
+        document.write(`Live @ ${new Date()}`);
+      </script>
+   </footer>
+</body>
+
+</html>

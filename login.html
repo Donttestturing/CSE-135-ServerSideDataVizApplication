@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./content/serverIcon.png">
+</head>
+
+<body id="login-body">
+    <div class="wrapper">
+        <header>Login Form</header>
+
+        <!-- Login failed -->
+        <div id="modal" class="alert alert-danger" role="alert" style="display:none">
+            Login failed!
+        </div>
+
+        <hr class="login-bar">
+        <form class="login-form" id="login" action="#">
+            <div class="login-form">
+                <label for="name">Email or Username: </label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div class="login-form">
+                <label for="email">Password: </label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="login-form">
+                <input type="submit" value="Login!">
+            </div>
+        </form>
+        <hr class="login-bar">
+        <div class="error" id="error-text"></div>
+        <div class="sign-txt">Not yet member? <a href="./register.html">Signup now</a></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+    <script type="module" src="./code/login.js"></script>
+
+</body>
+<footer> Thank you! </footer>
+
+</html>
