@@ -2,7 +2,7 @@
 
 ## Site
 
-<https://www.ucsociallydead.com/>
+~~<https://www.ucsociallydead.com/>~~ Site is no longer being hosted.
 
 
 ## Notes
