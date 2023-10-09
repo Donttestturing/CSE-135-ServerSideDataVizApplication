@@ -4,6 +4,8 @@
 
 ~~<https://www.ucsociallydead.com/>~~ Site is no longer being hosted.
 
+Portion of overall server project, which is available on request.
+
 
 ## Notes
 
